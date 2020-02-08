@@ -5,8 +5,8 @@ const reserva_model = require('../modelos/Reserva');
 const ambiente_model = require('../modelos/Ambiente');
 const usuario_model = require('../modelos/Usuario');
 
-const conexion = new Sequelize("ambientes", "root", "root", {
-  host: 'localhost',
+const conexion = new Sequelize("V27x1TahLb", "V27x1TahLb", "eTrcfN14dQ", {
+  host: 'remotemysql.com',
   dialect: 'mysql',
   dialectOptions: {
     useUTC: false,
@@ -15,6 +15,16 @@ const conexion = new Sequelize("ambientes", "root", "root", {
   },
   timezone: '-05:00'
 });
+// const conexion = new Sequelize("ambientes", "root", "root", {
+//   host: 'localhost',
+//   dialect: 'mysql',
+//   dialectOptions: {
+//     useUTC: false,
+//     dateStrings: true,
+//     typeCast:true
+//   },
+//   timezone: '-05:00'
+// });
 
 // Creando Modelos
 const Pabellon = pabellon_model(conexion);
