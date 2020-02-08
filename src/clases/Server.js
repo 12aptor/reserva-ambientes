@@ -9,7 +9,8 @@ const {usuario_router} = require('../rutas/Usuario');
 class Server {
   constructor() {
     this.app = express();
-    this.puerto = 5000;
+    this.puerto = process.env.PORT || 5000;
+    // this.puerto = 5000;
     this.habilitarCORS();
     this.configurarBodyParser();
     this.cargarRutas();
