@@ -5,6 +5,8 @@ const { pabellon_router } = require('./../rutas/Pabellon');
 const {ambiente_router} = require('../rutas/Ambientes');
 const {reserva_router} = require('../rutas/Reserva');
 const {usuario_router} = require('../rutas/Usuario');
+const swagger_ui = require('swagger-ui-express');
+const documentacion = require('../docs/documentacion.json');
 
 class Server {
   constructor() {
@@ -37,6 +39,7 @@ class Server {
       res.status(200).send('La API Funciona!!! ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°)')
     })
     this.app.use('/', pabellon_router, ambiente_router, reserva_router, usuario_router);
+    this.app.use('/documentacion', swagger_ui.serve, swagger_ui.setup(documentacion));
 
   }
 
