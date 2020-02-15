@@ -112,9 +112,18 @@ const getReservaByFechas = (req, res)=>{
         }
     })
 }
+const getReservas = (req,res)=>{
+    Reserva.findAll().then(reservas=>{
+        res.status(200).json({
+            ok:true,
+            contenido: reservas
+        })
+    })
+}
 
 module.exports = {
     postReserva,
     validarReserva,
-    getReservaByFechas
+    getReservaByFechas,
+    getReservas
 }
